@@ -1,0 +1,73 @@
+[portfolio]
+# Number of top stocks in ranking taken to portfolio.
+top = 15
+investment_name = "DEMO"
+initial_capital = 1000
+# ticker for benchmark
+benchmark = "^GSPC"
+# tickers to remove from analysis (Iterable)
+tickers_to_remove = ["GOOG"]
+
+[performance]
+# Number of trading days in a year.
+periods_per_year = 252
+# Rebalancing positions to equal weights in portfolio after replacing (true/false).
+is_rebalanced = false
+
+[replacement]
+# frequency "m" for monthly and "w" for weekly stock replacement in portfolio.
+frequency = "m"
+# stock replacement strategy name to apply for backtesting the portfolio
+replace_strategy = "demo_replace"
+# Buy/Sell stock transaction fee (fraction of position value). E.g. 0.005
+transaction_fee = 0.002
+
+[rank]
+strategy = "demo"
+# Filter out stocks from ranking list if bongo negative (true/false)
+is_rank_bongo_filtered = false
+# Filter out stocks from ranking list if price < SMA(sma_stocks) (true/false)
+is_rank_sma_filtered = false
+# Limit the stocks when ranking to those with top RS [rs_limit] (true/false).
+is_rank_rs_limited = false
+# Number of top RS ranked stocks in the period.
+rs_limit = 200
+
+[rank_input]
+# Number of stocks' SMA periods in weeks (weekly SMA) to indicate above/below SMA.
+sma_stocks = 35
+# Add technical indicators info to ranking output (true/false).
+with_tech_indicators = true
+
+[scoring]
+# scoring weights values to apply in stocks' ranking (floats)
+eps_growth = 0.5
+eps_growth_acceleration = 0.5
+mean_sales_growth = 0.5
+sales_growth_acceleration = 0.5
+lq_0_perf = 0.6
+lq_1_perf = 0.4
+eps_rank = 0.3
+sales_rank = 0.3
+price_rank = 0.4
+
+[collect]
+# number of months back to test for montly intervals 
+number_of_months = 49
+# number of weeks back to test for weekly intervals
+number_of_weeks = 210
+# how many quarters back to look for statements (+19 to # of quarters back)
+financial_statements_limit = 32
+# how many weeks before ptf starts to pull prices (105 to start 2 year in advance)
+prices_weeks_delta = 105
+
+[repo_files]
+path = "files_repo"
+period_tickers = "files_repo/period_tickers.json"
+income_statements = "files_repo/is_data.json"
+balance_sheets = "files_repo/bs_data.json"
+earning_calendars = "files_repo/ec_data.json"
+db = "files_repo/prices.db"
+
+[output_files]
+path = "files_output"

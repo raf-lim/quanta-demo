@@ -1,0 +1,16 @@
+.vscode
+__pycache__
+.ipynb_checkpoints
+
+.venv
+.env
+
+*.csv
+*.xlsx
+#*.db
+*db-journal
+#*.json
+#*.png
+#*.jpeg
+*.txt
+*.html

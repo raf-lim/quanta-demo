@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      target: production
+      args:
+        USER: app
+        GROUP: app
+    image: quanta-demo-dev-image
+    container_name: quanta-demo
+    volumes:
+      - ./src/:/home/app/code/
+    env_file:
+      - .env
+    environment:
+      BUILD_ENV: prod 
+    tty: true  # to keep container running 
