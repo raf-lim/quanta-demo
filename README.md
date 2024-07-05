@@ -90,6 +90,11 @@ Enter "y" to save desired file just push enter to skip.
 
 <img src="public/images/perf.PNG" width="75%">
 
+Temporary plotting package enables to visualize performance and selected stocks' price action. At later stage the web app will be developed to present seleceted visuals (in this demo only price action).
+
+<img src="public/images/stocks.PNG" width="75%">
+<img src="public/images/perf_vs_index.png" width="75%">
+<img src="public/images/ann_perf.png" width="75%">
 
 
 ### Concepts
